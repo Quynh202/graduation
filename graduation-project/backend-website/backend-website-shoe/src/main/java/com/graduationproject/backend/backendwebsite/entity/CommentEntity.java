@@ -1,0 +1,49 @@
+package com.graduationproject.backend.backendwebsite.entity;
+
+import java.io.Serializable;
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+import javax.persistence.Table;
+import lombok.Data;
+import lombok.EqualsAndHashCode;
+
+
+@EqualsAndHashCode(callSuper = true)
+@Entity
+@Data
+@Table(name = "tbl_comment")
+public class CommentEntity extends BaseEntity implements Serializable {
+
+  private static final long serialVersionUID = 1L;
+
+  public CommentEntity() {
+
+    super();
+  }
+
+  @Id
+  @GeneratedValue(strategy = GenerationType.IDENTITY)
+  @Column(name = "comment_id", nullable = false)
+  private Long commentId;
+
+  @Column(name = "user_information_id", nullable = false)
+  private Long userInformationId;
+
+  @Column(name = "product_id", nullable = false)
+  private Long productId;
+
+
+
+  @Column(name = "comment_detail", nullable = false)
+  private String commentDetail;
+
+  /*
+   * Code = 01 => Product
+   * Code = 02 => Article
+   * */
+  @Column(name = "comment_code", length = 2, nullable = false)
+  private String commentCode;
+}

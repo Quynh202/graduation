@@ -1,0 +1,67 @@
+<template lang="">
+  <div class="w-[400px] h-full pt-6">
+    <div class="flex flex-col text-lg font-bold">
+      <router-link :to="{ name: 'Admin' }">
+        <span class="">Thống kê </span>
+      </router-link>
+      
+      
+      <router-link :to="{ name: 'CategoryAdmin' }">
+        <span>Danh mục sản phẩm</span>
+      </router-link>
+      <router-link :to="{ name: 'ContactAdmin' }">
+        <span>Liên hệ</span>
+      </router-link>
+      <router-link :to="{ name: 'OrderAdmin' }">
+        <span>Đơn đặt hàng</span>
+      </router-link>
+      <router-link :to="{ name: 'ProductAdmin' }">
+        <span>Sản phẩm</span>
+      </router-link>
+      <router-link :to="{ name: 'VoucherAdmin' }">
+        <span>Mã giảm giá</span>
+      </router-link>
+      <router-link :to="{ name: 'UserAdmin' }">
+        <span>Tài khoản</span>
+      </router-link>
+      <!-- <router-link :to="{ name: 'RoleAdmin' }">
+        <span>Quyền</span>
+      </router-link> -->
+    </div>
+  </div>
+</template>
+<script></script>
+<style lang="scss" scoped>
+div {
+  div {
+    & > a {
+      padding: 5px 10px;
+      transition: all 0.2s;
+      border-radius: 3px;
+      border-left: 4px solid transparent;
+      &:hover {
+        color: #b4e771;
+      }
+      &.router-link-active {
+        background: #80bb35;
+        color: white;
+        border-left: 4px solid ;
+      }
+    }
+    span {
+      font-size: 16px;
+      font-weight: 500;
+      padding: 8px 20px;
+      
+      cursor: pointer;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      border-left: 3px transparent solid;
+      &:hover {
+        color: #80bb35;
+      }
+    }
+  }
+}
+</style>
